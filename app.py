@@ -36,7 +36,7 @@ def create():
         intro = request.form['intro']
         text = request.form['text']
 
-        article = Articles(title=this.title, intro=this.intro, text=this.text)
+        article = Articles(title=title, intro=intro, text=text)
         try:
             db.session.add(article)
             db.session.commit()

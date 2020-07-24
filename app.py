@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -36,7 +36,7 @@ def create():
         intro = request.form['intro']
         text = request.form['text']
 
-        article = Articles(title=title, intro=intro, text=text)
+        article = Articles(title=this.title, intro=this.intro, text=this.text)
         try:
             db.session.add(article)
             db.session.commit()
